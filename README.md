@@ -49,7 +49,7 @@
 🧪 單元測試 (Unit Test)
 -
 針對核心元件進行邊界、錯誤與一般條件測試：
-1. CoinInputChecker：驗證輸入字串轉換為數字的正確性，測試範圍從 1 至 decimal.MaxValue（不用0是因為拿0去兌換沒有意義）。
+1. CoinInputChecker：驗證輸入字串轉換為數字的正確性，測試範圍從 1 至 decimal.MaxValue（測試範圍不從0開始是因為拿0去兌換沒有意義）。
    
 2. ExchangeCoin：驗證演算法在不同面額組合下的輸出準確度。
    
