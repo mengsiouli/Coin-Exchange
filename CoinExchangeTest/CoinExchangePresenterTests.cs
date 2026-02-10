@@ -22,10 +22,10 @@ namespace CoinExchangeTest
 			presenter.OnExchangeRequest();
 
 			// ensure the view's error method is called with the expected message
-			mockView.Verify( v => v.ShowExchangeErrorAndUpdateUI( EXPECTED_ERROR_MESSAG ), Times.Once() );
+			mockView.Verify( v => v.ShowExchangeErrorAndUpdateUI( EXPECTED_ERROR_MESSAGE ), Times.Once() );
 		}
 
 		const string AMOUNT_INPUT_INVALID = "B&B";
-		const string EXPECTED_ERROR_MESSAG = "Please input a positive integer.";
+		const string EXPECTED_ERROR_MESSAGE = "Please input a positive integer.";
 	}
 }
