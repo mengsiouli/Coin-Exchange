@@ -46,11 +46,11 @@
 5. 查看結果：兌換數量依面額由左至右顯示於相對應欄位（4）中。未勾選的幣種將不會顯示數量。
 <img width="911" height="358" alt="image" src="https://github.com/user-attachments/assets/4adbc641-b4c8-4b77-bfc2-6ac44ad3de10" />
 
-🧪 單元測試 (Unit Test)
+🧪 測試規劃與品質保證 (Unit Testing & Quality Assurance)
 -
 針對核心元件進行邊界、錯誤與一般條件測試：
 1. CoinInputChecker：驗證輸入字串轉換為數字的正確性，測試範圍從 1 至 decimal.MaxValue（測試範圍不從0開始是因為拿0去兌換沒有意義）。
    
 2. ExchangeCoin：驗證演算法在不同面額組合下的輸出準確度。
    
-3. CoinExchangePresenter：驗證當輸入無效金額時，Presenter 能否透過介面攔截並顯示對應錯誤訊息。
+3. CoinExchangePresenter：使用 Moq 框架模擬 View 行為。驗證當輸入為無效字元（如 "B&B"）時 ，Presenter 能否正確攔截並調用 UI 的錯誤顯示方法。
