@@ -1,0 +1,41 @@
+name: Manual Build .NET Framework WinForms
+
+# This workflow is configured for manual triggering
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # WinForms and .NET Framework require a Windows runner to compile correctly
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Initialize MSBuild, which is the core engine for .NET Framework projects
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # Initialize NuGet to handle package restoration
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v2
+
+    # Restore dependencies defined in your solution or packages.config
+    - name: Restore NuGet Packages
+      run: nuget restore
+
+    # Compile the solution using MSBuild with Release configuration
+    # It will automatically find the .sln file in your repository
+    - name: Build Solution
+      run: msbuild /p:Configuration=Release /p:Platform="Any CPU"
+
+    # Capture the compiled binaries (.exe, .dll, etc.) and make them available for download
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: WinForms-Executable-Pack
+        # This path targets the standard output directory for .NET Framework builds
+        path: "**/bin/Release/"
