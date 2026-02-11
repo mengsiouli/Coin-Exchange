@@ -22,7 +22,7 @@ namespace CoinExchange.Model
 			.ToList();
 			}
 			catch( Exception ) {
-				MessageBox.Show( "Read failed. The system loads the default coin types (50, 10, 5, 1).", "Warm" );
+				MessageBox.Show( "Read failed. The system loads the default coin types (50, 10, 5, 1).", "Warning" );
 				return defaultValue;
 			}
 		}
