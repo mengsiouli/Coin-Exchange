@@ -57,10 +57,10 @@
     <Compile Include="Model\CoinInputChecker.cs" />
     <Compile Include="Model\CoinConfigProvider.cs" />
     <Compile Include="Model\ExchangeCoin.cs" />
-    <Compile Include="FrmCoinExchange.cs">
+    <Compile Include="View\FrmCoinExchange.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCoinExchange.Designer.cs">
+    <Compile Include="View\FrmCoinExchange.Designer.cs">
       <DependentUpon>FrmCoinExchange.cs</DependentUpon>
     </Compile>
     <Compile Include="IPresenter\IPresenter.cs" />
@@ -70,13 +70,13 @@
     <Compile Include="Presenter\CoinExchangePresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UclCoinExchangeItem.cs">
+    <Compile Include="UserControl\UclCoinExchangeItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UclCoinExchangeItem.Designer.cs">
+    <Compile Include="UserControl\UclCoinExchangeItem.Designer.cs">
       <DependentUpon>UclCoinExchangeItem.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmCoinExchange.resx">
+    <EmbeddedResource Include="View\FrmCoinExchange.resx">
       <DependentUpon>FrmCoinExchange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,7 +88,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UclCoinExchangeItem.resx">
+    <EmbeddedResource Include="UserControl\UclCoinExchangeItem.resx">
       <DependentUpon>UclCoinExchangeItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
